@@ -8,6 +8,8 @@ export async function get_domain(ip: string): Promise<string[]> {
 		const domains = await reverse_async(ip)
 		return domains
 	} catch (error) {
-		throw new Error(`Failed to reverse lookup for IP ${ip}: ${error.message}`)
+		const message = (error instanceof Error) ? error.message : String(error)
+
+		throw new Error(`Failed to reverse lookup for IP ${ip}: ${message}`)
 	}
 }
