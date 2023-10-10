@@ -1,12 +1,8 @@
-import whois from 'whois-json';
+import * as whois from 'whois'
+import { promisify } from 'util'
 
-export async function get_whois(domain: string): Promise<any> {
-	try {
-		const data = await whois(domain)
-		return data
-	} catch (error) {
-		const message = (error instanceof Error) ? error.message : String(error)
+const whois_lookup_async = promisify(whois.lookup)
 
-		throw new Error(`Failed to whois lookup for domain ${domain}: ${message}`)
-	}
+export async function get_whois(domain: string): Promise<string> {
+	return whois_lookup_async(domain)
 }
