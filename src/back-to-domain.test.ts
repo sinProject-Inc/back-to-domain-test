@@ -14,6 +14,11 @@ const specs: Spec[] = [
 		expected: 'fp7452cd88.oski512.ap.nuro.jp'
 	},
 	{
+		name: 'should return the domain',
+		ip: '153.246.176.60',
+		expected: 'p7201061-ipoefx.ipoe.ocn.ne.jp'
+	},
+	{
 		name: 'empty',
 		ip: '',
 		expected: ''

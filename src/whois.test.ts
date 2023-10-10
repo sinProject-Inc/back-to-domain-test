@@ -11,22 +11,27 @@ const specs: Spec[] = [
 	{
 		name: 'example.com',
 		domain: 'example.com',
-		expected: ''
+		expected: 'organisation: Internet Assigned Numbers Authority'
 	},
 	{
 		name: 'sinproject.net',
 		domain: 'sinproject.net',
-		expected: ''
+		expected: 'Creation Date: 2012-05-05T17:17:07Z'
 	},
 	{
 		name: 'sinpro.dev',
 		domain: 'sinpro.dev',
-		expected: ''
+		expected: 'Creation Date: 2023-05-29T06:04:38Z'
+	},
+	{
+		name: 'togei-sf.co.jp',
+		domain: 'togei-sf.co.jp',
+		expected: '[Registered Date]               2017/12/17'
 	},
 ]
 
 it.each(specs)('get_whois($domain)', async (spec) => {
-	const { domain } = spec
+	const { domain, expected } = spec
 
 	if (!domain) {
 		expect(async () => await get_whois(domain)).rejects.toThrow()
@@ -37,5 +42,5 @@ it.each(specs)('get_whois($domain)', async (spec) => {
 
 	console.log(result)
 
-	expect(result).to.not.undefined
+	expect(result).toContain(expected)
 })
