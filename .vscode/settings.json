@@ -67,6 +67,7 @@
 		"nprogress",
 		"Nuxt",
 		"OPENAI",
+		"organisation",
 		"Pexels",
 		"Piseth",
 		"pixabay",
@@ -89,6 +90,7 @@
 		"texttospeech",
 		"Thymeleaf",
 		"Todos",
+		"togei",
 		"Trackpad",
 		"tulnp",
 		"typecheck",
@@ -99,7 +101,8 @@
 		"viewports",
 		"vivus",
 		"Wappalyzer",
-		"Wavenet"
+		"Wavenet",
+		"whois"
 	],
 	"cSpell.enabledLanguageIds": [
 		"asciidoc",
@@ -172,7 +175,7 @@
 	"i18n-ally.displayLanguage": "en-US",
 	"i18n-ally.sourceLanguage": "en-US",
 	"code-runner.executorMap": {
-		"typescript": "npx tsx"
+		"typescript": "bun"
 	},
 	"workbench.iconTheme": "material-icon-theme",
 	"editor.minimap.enabled": false,

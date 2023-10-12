@@ -1,6 +1,12 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx lint-staged
+current_branch=$(git branch --show-current)
 
-npm run lint
+if [ "$current_branch" = "main" ]; then
+  echo "Error: You cannot commit directly to main branch!"
+  exit 1
+fi
+
+bun --bun lint-staged
+bun --bun run lint
